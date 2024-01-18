@@ -16,6 +16,11 @@ let package = Package(
         .target(name: "RadoSmallServer", dependencies: [
             .product(name: "NIO", package: "swift-nio"),
             .product(name: "NIOHTTP1", package: "swift-nio")
+        ]),
+        .testTarget(name: "RadoSmallServerTests", dependencies: [
+            .target(name: "RadoSmallServer"),
+            .product(name: "NIO", package: "swift-nio"),
+            .product(name: "NIOHTTP1", package: "swift-nio")
         ])
     ]
 )
